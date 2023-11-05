@@ -1,11 +1,18 @@
-import React from 'react'
+import React,{useState} from 'react'
 import '../styles/App.css';
 const App = () => {
+  const [formData,setFormData] = useState({
+    name:'',
+  })
 
+  function handleSubmit(e){
+    e.preventDefault();
+    console.log("form submitted");
+  }
 
   return (
     <div id="main">
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor='name'>Name</label>
         <input id="name" type={"text"} />
 
